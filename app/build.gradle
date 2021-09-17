@@ -7,7 +7,7 @@ android {
     compileSdk 30
 
     defaultConfig {
-        applicationId "com.example.ekaappis"
+        applicationId "com.example.osrsutility"
         minSdk 23
         targetSdk 30
         versionCode 1

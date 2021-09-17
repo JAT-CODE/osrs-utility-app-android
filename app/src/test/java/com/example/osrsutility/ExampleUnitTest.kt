@@ -1,4 +1,4 @@
-package com.example.ekaappis
+package com.example.osrsutility
 
 import org.junit.Test
 
