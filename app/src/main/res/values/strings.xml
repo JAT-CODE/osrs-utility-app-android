@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">OSRS Utility</string>
+    <string name="textview">TextView</string>
+    <string name="grand_exchange">Grand Exchange</string>
+    <string name="back">Back</string>
+    <string name="testi_teksti_hei_vaan">testi teksti hei vaan</string>
+    <string name="todo">TODO</string>
 </resources>

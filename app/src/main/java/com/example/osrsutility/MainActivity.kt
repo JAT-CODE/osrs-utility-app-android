@@ -3,11 +3,18 @@ package com.example.osrsutility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log.d
+import android.widget.Button
 import android.widget.TextView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import android.content.Intent
+
+
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,31 +25,13 @@ class MainActivity : AppCompatActivity() {
 
         d("jpk", "enter onCreate()");
 
-        val textView = findViewById<TextView>(R.id.helloTextView);
+        val geButton = findViewById<Button>(R.id.geButton);
+        val textView = findViewById<TextView>(R.id.helloTextView)
 
-        textView.setOnClickListener {
+        geButton.setOnClickListener {
 
-            val queue = Volley.newRequestQueue(this);
-            val url = "https://secure.runescape.com/m=itemdb_oldschool/api/catalogue/detail.json?item=10352";
-
-            val stringRequest = StringRequest(
-                Request.Method.GET, url,
-                { response ->
-                    // Display the first 500 characters of the response string.
-                    val obj = JSONObject(response);
-                    val item: JSONObject = obj.get("item") as JSONObject;
-                    val text = "Item is: ${item.get("name")}\n" +
-                            "Current value: ${(item.get("current") as JSONObject).get("price")}"
-                    textView.text = text;
-                },
-                { textView.text = "That didn't work!" }
-            )
-
-            // Add the request to the RequestQueue.
-            queue.add(stringRequest)
-
-
-
+            val intent = Intent(this, GrandExchange::class.java)
+            startActivity(intent)
 
             textView.text = "";
             d("jpk", "Button pressed");
