@@ -1,6 +1,6 @@
 package com.example.osrsutility
 
-data class itemData(
+data class ItemData(
     val examine: String,
     val id: Int,
     val members: Boolean,

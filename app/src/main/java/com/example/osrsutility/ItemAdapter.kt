@@ -8,7 +8,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.osrsutility.databinding.ListItemBinding
 
-class itemAdapter(val items : List<itemData>) : RecyclerView.Adapter<itemAdapter.ItemViewHolder>() {
+class ItemAdapter(val items : List<ItemData>, val listener: (ItemData) -> Unit) : RecyclerView.Adapter<ItemAdapter.ItemViewHolder>() {
+
+    private var bigImgUrlBase = "https://secure.runescape.com/m=itemdb_oldschool/obj_big.gif"
 
     private var _binding: ListItemBinding? = null
     // This property is only valid between onCreateView and
@@ -25,12 +27,15 @@ class itemAdapter(val items : List<itemData>) : RecyclerView.Adapter<itemAdapter
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = items[position]
 
+        holder.itemView.setOnClickListener { listener(item) }
+
         holder.view.findViewById<TextView>(R.id.tvHeading).text = item.name
         holder.view.findViewById<TextView>(R.id.description).text = item.examine
 
         Glide.with(holder.view.context)
-            .load("https://secure.runescape.com/m=itemdb_oldschool/1633359101944_obj_big.gif?id="+item.id)
+            .load(bigImgUrlBase + "?id=" + item.id)
             .into(holder.view.findViewById(R.id.title_image))
+
     }
 
     override fun getItemCount() = items.size

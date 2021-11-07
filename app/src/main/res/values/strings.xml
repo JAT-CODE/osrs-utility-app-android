@@ -3,6 +3,27 @@
     <string name="textview">TextView</string>
     <string name="grand_exchange">Grand Exchange</string>
     <string name="back">Back</string>
-    <string name="testi_teksti_hei_vaan">testi teksti hei vaan</string>
-    <string name="todo">TODO</string>
+    <string name="placeholderItemText">ItemText</string>
+    <string name="placeholderDescription">ItemDescription</string>
+    <string name="search_hint">Search for an item</string>
+    <string name="profile_button_text">Profile</string>
+    <string name="logo_placeholder">Logo</string>
+    <string name="add_option_title">Add</string>
+    <string name="search_option_title">Search</string>
+    <string name="refresh_option_title">Refresh</string>
+    <string name="title_activity_item">ItemActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="item_image_placeholder">ItemImage</string>
+    <string name="members_only_placeholder">MembersOnly</string>
+    <string name="coin_placeholder">coinImg</string>
+    <string name="value_label">Value:</string>
+    <string name="lowalch_label">Low alchemy:</string>
+    <string name="highalch_label">High alchemy:</string>
+    <string name="limit_label">Buy limit:</string>
+
 </resources>
