@@ -27,5 +27,5 @@ data class TrendAndPrice (
 
 data class TrendAndChange (
     val trend: String,
-    val price: String
+    val change: String
 )

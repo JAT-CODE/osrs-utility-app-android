@@ -11,12 +11,15 @@ class MainActivity : AppCompatActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        supportActionBar?.hide()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        d("jpk", "enter onCreate()");
+        d("jpk", "enter onCreate()")
 
-        val geButton = findViewById<Button>(R.id.geButton);
+        val geButton = findViewById<Button>(R.id.geButton)
         val profileButton = findViewById<Button>(R.id.profileBtn)
 
         geButton.setOnClickListener {
@@ -32,6 +35,6 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        d("jpk", "exit onCreate()");
+        d("jpk", "exit onCreate()")
     }
 }

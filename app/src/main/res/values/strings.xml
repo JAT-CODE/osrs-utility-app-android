@@ -6,7 +6,7 @@
     <string name="placeholderItemText">ItemText</string>
     <string name="placeholderDescription">ItemDescription</string>
     <string name="search_hint">Search for an item</string>
-    <string name="profile_button_text">Profile</string>
+    <string name="profile_button_text">Profiles</string>
     <string name="logo_placeholder">Logo</string>
     <string name="add_option_title">Add</string>
     <string name="search_option_title">Search</string>
@@ -26,4 +26,10 @@
     <string name="highalch_label">High alchemy:</string>
     <string name="limit_label">Buy limit:</string>
 
+    <string name="currPriceLabel">Current Guide Price:</string>
+    <string name="todayLabel">Today\'s Change:</string>
+    <string name="day30Label">30 days Change:</string>
+    <string name="day90Label">90 days Change:</string>
+    <string name="day180Label">180 days Change:</string>
+    <string name="coins_image_description">coinsImage</string>
 </resources>

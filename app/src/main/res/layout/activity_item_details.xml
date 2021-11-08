@@ -35,26 +35,14 @@
     <View
         android:id="@+id/view4"
         style="@style/Divider.Horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.615"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
-
-    <View
-        android:id="@+id/view2"
-        style="@style/Divider.Vertical"
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/itemImageView"
-        app:layout_constraintStart_toEndOf="@+id/itemImageView"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/membersOnlyIcon"
@@ -77,155 +65,410 @@
         app:layout_constraintTop_toBottomOf="@+id/view"
         tools:srcCompat="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/itemExamineText"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        tools:text="Item examine text" />
+        app:layout_constraintStart_toEndOf="@+id/itemImageView"
+        app:layout_constraintTop_toBottomOf="@+id/view">
 
-    <TextView
-        android:id="@+id/valueText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        <TextView
+            android:id="@+id/itemExamineText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Item examine text" />
+
+        <ImageView
+            android:id="@+id/coinImage"
+            android:layout_width="16dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/coin_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/valueLabelText"
+            app:srcCompat="@drawable/coin" />
+
+        <TextView
+            android:id="@+id/valueLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/value_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintStart_toEndOf="@+id/coinImage"
+            app:layout_constraintTop_toBottomOf="@+id/itemExamineText"
+            tools:text="Value:" />
+
+        <TextView
+            android:id="@+id/valueText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/valueLabelText"
+            tools:text="9999999" />
+
+        <ImageView
+            android:id="@+id/lowalchImage"
+            android:layout_width="16dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/coin_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lowalchLabelText"
+            app:srcCompat="@drawable/low_level_alchemy_icon" />
+
+        <TextView
+            android:id="@+id/lowalchLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/lowalch_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintStart_toEndOf="@+id/lowalchImage"
+            app:layout_constraintTop_toBottomOf="@+id/valueLabelText"
+            tools:text="Low Alchemy:" />
+
+        <TextView
+            android:id="@+id/lowalchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lowalchLabelText"
+            tools:text="9999999" />
+
+        <ImageView
+            android:id="@+id/highalchImage"
+            android:layout_width="16dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/coin_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/highalchLabelText"
+            app:srcCompat="@drawable/high_level_alchemy_icon" />
+
+        <TextView
+            android:id="@+id/highalchLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/highalch_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintStart_toEndOf="@+id/highalchImage"
+            app:layout_constraintTop_toBottomOf="@+id/lowalchLabelText"
+            tools:text="High Alchemy:" />
+
+        <TextView
+            android:id="@+id/highalchText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/highalchLabelText"
+            tools:text="9999999" />
+
+        <ImageView
+            android:id="@+id/limitImage"
+            android:layout_width="16dp"
+            android:layout_height="20dp"
+            android:contentDescription="@string/coin_placeholder"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/limitLabelText"
+            app:srcCompat="@drawable/ic_baseline_vertical_align_top_24"
+            app:tint="#000000" />
+
+        <TextView
+            android:id="@+id/limitLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/limit_label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintStart_toEndOf="@+id/limitImage"
+            app:layout_constraintTop_toBottomOf="@+id/highalchLabelText"
+            tools:text="Buy Limit:" />
+
+        <TextView
+            android:id="@+id/limitText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/limitLabelText"
+            tools:text="9999999" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/itemExamineText"
-        tools:text="9999999" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/valueLabelText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/value_label"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toEndOf="@+id/coinImage"
-        app:layout_constraintTop_toBottomOf="@+id/itemExamineText"
-        tools:text="Value:" />
+        <TextView
+            android:id="@+id/currentPriceLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/currPriceLabel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/lowalchText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/valueText"
-        tools:text="9999999" />
+        <TextView
+            android:id="@+id/todayPriceLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/todayLabel"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/currentPriceLabelText"
+            app:layout_constraintTop_toBottomOf="@+id/currentPriceLabelText" />
 
-    <TextView
-        android:id="@+id/lowalchLabelText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/lowalch_label"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toEndOf="@+id/lowalchImage"
-        app:layout_constraintTop_toBottomOf="@+id/valueLabelText"
-        tools:text="Low Alchemy:" />
+        <TextView
+            android:id="@+id/todayChangeAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/imageView3"
+            app:layout_constraintTop_toTopOf="@+id/todayPriceLabelText"
+            tools:text="999999" />
 
-    <TextView
-        android:id="@+id/highalchText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lowalchText"
-        tools:text="9999999" />
+        <TextView
+            android:id="@+id/todayChangePercentageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/todayChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/todayPriceLabelText"
+            tools:text="999999" />
 
-    <TextView
-        android:id="@+id/highalchLabelText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/highalch_label"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toEndOf="@+id/highalchImage"
-        app:layout_constraintTop_toBottomOf="@+id/lowalchLabelText"
-        tools:text="High Alchemy:" />
+        <TextView
+            android:id="@+id/day30PriceLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/day30Label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/currentPriceLabelText"
+            app:layout_constraintTop_toBottomOf="@+id/todayPriceLabelText" />
 
-    <TextView
-        android:id="@+id/limitText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/highalchText"
-        tools:text="9999999" />
+        <TextView
+            android:id="@+id/days30ChangeAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/imageView5"
+            app:layout_constraintTop_toTopOf="@+id/day30PriceLabelText"
+            tools:text="999999" />
 
-    <TextView
-        android:id="@+id/limitLabelText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/limit_label"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        app:layout_constraintStart_toEndOf="@+id/limitImage"
-        app:layout_constraintTop_toBottomOf="@+id/highalchText"
-        tools:text="Buy Limit:" />
+        <TextView
+            android:id="@+id/days30ChangePercentageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/days30ChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/day30PriceLabelText"
+            tools:text="999999" />
 
-    <ImageView
-        android:id="@+id/coinImage"
-        android:layout_width="16dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/coin_placeholder"
-        app:layout_constraintStart_toEndOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/itemExamineText"
-        app:srcCompat="@drawable/coin" />
+        <TextView
+            android:id="@+id/day90PriceLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/day90Label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/currentPriceLabelText"
+            app:layout_constraintTop_toBottomOf="@+id/day30PriceLabelText" />
 
-    <ImageView
-        android:id="@+id/lowalchImage"
-        android:layout_width="16dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/coin_placeholder"
-        app:layout_constraintStart_toEndOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/valueText"
-        app:srcCompat="@drawable/low_level_alchemy_icon" />
+        <TextView
+            android:id="@+id/day180PriceLabelText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/day180Label"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@+id/currentPriceLabelText"
+            app:layout_constraintTop_toBottomOf="@+id/day90PriceLabelText"
+            tools:text="180 days change:" />
 
-    <ImageView
-        android:id="@+id/highalchImage"
-        android:layout_width="16dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/coin_placeholder"
-        app:layout_constraintStart_toEndOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/lowalchText"
-        app:srcCompat="@drawable/high_level_alchemy_icon" />
+        <TextView
+            android:id="@+id/days90ChangeAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toTopOf="@+id/day90PriceLabelText"
+            tools:text="999999" />
 
-    <ImageView
-        android:id="@+id/limitImage"
-        android:layout_width="16dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@string/coin_placeholder"
-        app:tint="#000000"
-        app:layout_constraintStart_toEndOf="@+id/view2"
-        app:layout_constraintTop_toBottomOf="@+id/highalchText"
-        app:srcCompat="@drawable/ic_baseline_vertical_align_top_24" />
+        <TextView
+            android:id="@+id/days180ChangeAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/imageView7"
+            app:layout_constraintTop_toTopOf="@+id/day180PriceLabelText"
+            tools:text="999999" />
+
+        <TextView
+            android:id="@+id/days90ChangePercentageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/days90ChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/day90PriceLabelText"
+            tools:text="999999" />
+
+        <TextView
+            android:id="@+id/days180ChangePercentageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/days180ChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/day180PriceLabelText"
+            tools:text="999999" />
+
+        <TextView
+            android:id="@+id/currentPriceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="@+id/currentPriceLabelText"
+            tools:text="999999" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="84dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toEndOf="@+id/todayChangePercentageText"
+            app:layout_constraintEnd_toStartOf="@+id/todayChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/todayPriceLabelText"
+            app:srcCompat="@drawable/coins" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="84dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toStartOf="@+id/days30ChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/day30PriceLabelText"
+            app:srcCompat="@drawable/coins" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="84dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toStartOf="@+id/days90ChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/day90PriceLabelText"
+            app:srcCompat="@drawable/coins" />
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="84dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toStartOf="@+id/days180ChangeIcon"
+            app:layout_constraintTop_toTopOf="@+id/day180PriceLabelText"
+            app:srcCompat="@drawable/coins" />
+
+        <ImageView
+            android:id="@+id/todayChangeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/todayPriceLabelText"
+            app:srcCompat="@drawable/no_change" />
+
+        <ImageView
+            android:id="@+id/days30ChangeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/day30PriceLabelText"
+            app:srcCompat="@drawable/no_change" />
+
+        <ImageView
+            android:id="@+id/days90ChangeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/day30PriceLabelText"
+            app:srcCompat="@drawable/no_change" />
+
+        <ImageView
+            android:id="@+id/days180ChangeIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/day180PriceLabelText"
+            app:srcCompat="@drawable/no_change" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="124dp"
+            android:contentDescription="@string/coins_image_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/currentPriceLabelText"
+            app:srcCompat="@drawable/coins" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

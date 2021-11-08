@@ -41,46 +41,29 @@ class GrandExchange : AppCompatActivity() {
         setContentView(view)
 
 
-        val queue1 = Volley.newRequestQueue(this)
-        val url1 = "https://prices.runescape.wiki/api/v1/osrs/latest"
+     //   val queue1 = Volley.newRequestQueue(this)
+     //   val url1 = "https://prices.runescape.wiki/api/v1/osrs/latest"
 
-        val stringRequest1 = StringRequest(
-            Request.Method.GET, url1,
-            { response ->
-                val jsonObject = JSONTokener(response).nextValue() as JSONObject
-                val jsonDatapool = jsonObject.getJSONObject("data")
-                    println(jsonDatapool)
-                //val itemID = jsonDatapool.keys();
-                    //println(itemID);
-
-                jsonDatapool.keys()
-
-            },
-            { println("That didn't work!") }
-        )
+    //    val stringRequest1 = StringRequest(
+    //        Request.Method.GET, url1,
+    //        { response ->
+    //            val jsonObject = JSONTokener(response).nextValue() as JSONObject
+    //            val jsonDatapool = jsonObject.getJSONObject("data")
+    //                println(jsonDatapool)
+    //            //val itemID = jsonDatapool.keys();
+    //                //println(itemID);
+    //
+    //            jsonDatapool.keys()
+    //
+    //        },
+    //        { println("That didn't work!") }
+    //    )
 
         // Add the request to the RequestQueue.
-        queue1.add(stringRequest1)
+    //    queue1.add(stringRequest1)
 
-        ItemsApi().getItems().enqueue(object : Callback<List<ItemData>> {
-            override fun onResponse(
-                call: Call<List<ItemData>>,
-                response: retrofit2.Response<List<ItemData>>
-            ) {
-                items = response.body()
+        getItems()
 
-                items?.let {
-                    showData(it)
-                }
-
-                handleIntent(intent)
-            }
-
-            override fun onFailure(call: Call<List<ItemData>>, t: Throwable) {
-                Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-            }
-
-        })
 
     }
 
@@ -92,12 +75,7 @@ class GrandExchange : AppCompatActivity() {
     private fun handleIntent(intent: Intent) {
         if(Intent.ACTION_SEARCH == intent.action) {
             query = intent.getStringExtra(SearchManager.QUERY)
-
-            val filteredItems = items?.filter { it.name.contains(query.toString(), true) }
-
-            filteredItems?.let {
-                showData(it)
-            }
+            filterItems()
         }
     }
 
@@ -109,6 +87,7 @@ class GrandExchange : AppCompatActivity() {
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         (menu.findItem(R.id.search).actionView as SearchView).apply {
             setSearchableInfo(searchManager.getSearchableInfo(componentName))
+            setOnCloseListener { onSearchCloseListener() }
             setQuery(query, false)
         }
 
@@ -122,6 +101,7 @@ class GrandExchange : AppCompatActivity() {
         }
 
         R.id.action_refresh -> {
+            getItems()
             true
         }
 
@@ -138,6 +118,48 @@ class GrandExchange : AppCompatActivity() {
         binding.recyclerViewItems.adapter = ItemAdapter(items, ::onClickItem )
     }
 
+
+
+
+    private fun getItems() {
+        ItemsApi().getItems().enqueue(object : Callback<List<ItemData>> {
+            override fun onResponse(
+                call: Call<List<ItemData>>,
+                response: retrofit2.Response<List<ItemData>>
+            ) {
+                items = response.body()
+
+                if(query.isNullOrEmpty())
+                    items?.let {
+                        showData(it)
+                    }
+                else
+                    filterItems()
+
+                handleIntent(intent)
+            }
+
+            override fun onFailure(call: Call<List<ItemData>>, t: Throwable) {
+                Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+            }
+
+        })
+    }
+
+    private fun filterItems() {
+        val filteredItems = items?.filter { it.name.contains(query.toString(), true) }
+
+        filteredItems?.let {
+            showData(it)
+        }
+    }
+
+    private fun onSearchCloseListener (): Boolean {
+        query = null
+        getItems()
+        return false
+    }
+
     private fun onClickItem (item: ItemData) {
         val intent = Intent(this, ItemDetailsActivity::class.java)
         intent.putExtra("currItemID", item.id)
@@ -146,7 +168,7 @@ class GrandExchange : AppCompatActivity() {
         intent.putExtra("currItemHighalch", item.highalch)
         intent.putExtra("currItemLimit", item.limit)
 
-        startActivity(intent);
-        return;
+        startActivity(intent)
+        return
     }
 }
