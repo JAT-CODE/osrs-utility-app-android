@@ -4,6 +4,27 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.31296296296296294" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/activity_grand_exchange.xml" value="0.4691358024691358" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/activity_item_details.xml" value="0.5" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/activity_profiles.xml" value="0.4691358024691358" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/list_item.xml" value="0.4691358024691358" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/list_user.xml" value="0.4691358024691358" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/activity_grand_exchange.xml" value="0.5541666666666667" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/activity_item_details.xml" value="0.44021739130434784" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/activity_profiles.xml" value="0.5541666666666667" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/activity_user_details.xml" value="0.5541666666666667" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/list_item.xml" value="0.5541666666666667" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/list_user.xml" value="0.5541666666666667" />
+        <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.31296296296296294" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/layout/activity_grand_exchange.xml" value="0.3416666666666667" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/layout/activity_item_details.xml" value="0.3453125" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/layout/activity_profiles.xml" value="0.41041666666666665" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/layout/activity_user_details.xml" value="0.41041666666666665" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/layout/list_item.xml" value="0.22" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/menu/ge_options_menu.xml" value="0.575" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/menu/item_options_menu.xml" value="0.3572916666666667" />
+        <entry key="..\:/Users/jope1/AndroidStudioProjects/osrs-utility-app-android/app/src/main/res/menu/profile_options_menu.xml" value="0.3453125" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.20729166666666668" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
