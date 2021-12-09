@@ -3,6 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/activity_grand_exchange.xml" value="0.4691358024691358" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/activity_item_details.xml" value="0.5" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/activity_profiles.xml" value="0.4691358024691358" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/list_item.xml" value="0.4691358024691358" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout-land/list_user.xml" value="0.4691358024691358" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/activity_grand_exchange.xml" value="0.5541666666666667" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/activity_item_details.xml" value="0.44021739130434784" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/activity_profiles.xml" value="0.5541666666666667" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/activity_user_details.xml" value="0.5541666666666667" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/list_item.xml" value="0.5541666666666667" />
+        <entry key="..\:/Joonas/KOULUJUTUT/Mobiiliohjelmointi/app/src/main/res/layout/list_user.xml" value="0.5541666666666667" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.31296296296296294" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.20729166666666668" />
