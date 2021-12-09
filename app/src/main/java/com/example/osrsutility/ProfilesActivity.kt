@@ -1,6 +1,8 @@
 package com.example.osrsutility
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -22,14 +24,19 @@ import retrofit2.Response
 class ProfilesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfilesBinding
 
-    private lateinit var viewModel: UserViewModel
-
-    private lateinit var users: LiveData<List<User>>
+    private var users: List<User> = listOf(User("Kaake"))
 
     private var alertDialog: AlertDialog? = null
 
+    private lateinit var viewModel: UserViewModel
 
+    private val adapter = UserAdapter(::onClickUser, ::onDeleteUser)
+
+    @SuppressLint("NotifyDataSetChanged")
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_profiles)
 
         viewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(UserViewModel::class.java)
 
@@ -37,23 +44,17 @@ class ProfilesActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        users = viewModel.allUsers
-
-        val adapter = UserAdapter(this,::onClickUser, ::onDeleteUser)
+        adapter.submitList(viewModel.allUsers.value)
+        binding.userRV.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.userRV.adapter = adapter
 
 
         viewModel.allUsers.observe(this, {
             Log.d("User", it.toString())
-
-            adapter.submitList(it)
+            adapter.submitList(it.toMutableList())
             Log.d("User", adapter.currentList.toString())
-
-
         })
 
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profiles)
 
         val actionBar: ActionBar? = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
@@ -134,10 +135,10 @@ class ProfilesActivity : AppCompatActivity() {
     }
 
     private fun onClickUser(user: User) {
-//        val intent = Intent(this, UserDetailsActivity::class.java)
-//        intent.putExtra("username", user.name)
+        val intent = Intent(this, UserDetailsActivity::class.java)
+        intent.putExtra("username", user.name)
 
-        //startActivity(intent)
+        startActivity(intent)
         return
     }
 
@@ -145,7 +146,7 @@ class ProfilesActivity : AppCompatActivity() {
         val deleteDialog = let {
             val builder = AlertDialog.Builder(it)
             builder.apply {
-                setTitle("Are you sure you want to delete user" + user.name)
+                setTitle("Are you sure you want to delete user " + user.name)
                 setPositiveButton("Confirm", DialogInterface.OnClickListener { dialog, id ->
                     // User clicked OK
                     viewModel.deleteUser(user)
