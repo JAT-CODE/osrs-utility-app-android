@@ -28,7 +28,9 @@ data class UserDetailsData(
 )
 
 data class Stat(
+    val name: String,
     val rank: Int,
     val level: Int,
-    val experience: Int?
+    val experience: Long?,
+    val icon: String?
 )

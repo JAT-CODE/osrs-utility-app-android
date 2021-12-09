@@ -4,6 +4,8 @@
     <string name="grand_exchange">Grand Exchange</string>
     <string name="back">Back</string>
     <string name="placeholderItemText">ItemText</string>
+    <string name="statLevelLabelText">Lv:</string>
+    <string name="statXpLabelText">Xp:</string>
     <string name="placeholderDescription">ItemDescription</string>
     <string name="search_hint">Search for an item</string>
     <string name="profile_button_text">Profiles</string>

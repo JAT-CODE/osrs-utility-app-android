@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OsrsUtility">
         <activity
+            android:name=".UserDetailsActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".ProfilesActivity" />
+        </activity>
+        <activity
             android:name=".ItemDetailsActivity"
             android:exported="true">
             <meta-data
@@ -25,6 +32,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+
 
         <meta-data
             android:name="com.google.android.actions"

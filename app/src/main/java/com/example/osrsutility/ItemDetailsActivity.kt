@@ -1,9 +1,6 @@
 package com.example.osrsutility
 
 import android.annotation.SuppressLint
-import android.app.SearchManager
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -11,15 +8,11 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.ActionBar
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.core.content.ContextCompat
-import androidx.core.view.isInvisible
-import androidx.core.view.isVisible
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
-import kotlin.math.abs
 import kotlin.math.roundToInt
 
 class ItemDetailsActivity : AppCompatActivity() {
@@ -114,7 +107,7 @@ class ItemDetailsActivity : AppCompatActivity() {
         @SuppressLint("SetTextI18n")
     private fun displayData(item: DetailsData?, value: Int, lowalch: Int, highalch: Int, limit: Int) {
         // Display item info
-        findViewById<TextView>(R.id.itemNameTextView).text = currItem?.name
+        findViewById<TextView>(R.id.userNameTextView).text = currItem?.name
         if (currItem?.members == true)
             findViewById<ImageView>(R.id.membersOnlyIcon).visibility = View.VISIBLE
         findViewById<TextView>(R.id.itemExamineText).text = currItem?.description

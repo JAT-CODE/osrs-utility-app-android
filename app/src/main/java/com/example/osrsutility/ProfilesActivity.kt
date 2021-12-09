@@ -12,7 +12,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AlertDialog
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.osrsutility.databinding.ActivityProfilesBinding
@@ -23,8 +22,6 @@ import retrofit2.Response
 
 class ProfilesActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfilesBinding
-
-    private var users: List<User> = listOf(User("Kaake"))
 
     private var alertDialog: AlertDialog? = null
 
