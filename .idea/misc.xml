@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.31296296296296294" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.20729166666666668" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/ic_search.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/drawable/member_icon.xml" value="0.22135416666666666" />
@@ -15,10 +17,13 @@
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/activity_item_details.xml" value="0.25" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/activity_profile.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/activity_profiles.xml" value="0.25" />
+        <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/activity_user_details.xml" value="0.25" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/content_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/fragment_first.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/fragment_second.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/list_item.xml" value="0.33" />
+        <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/layout/list_user.xml" value="0.25" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/menu/ge_options_menu.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/menu/options_menu.xml" value="0.25" />
         <entry key="..\:/Users/lassi/AndroidStudioProjects/EkaAppis/app/src/main/res/menu/profile_options_menu.xml" value="0.36666666666666664" />

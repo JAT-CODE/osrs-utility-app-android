@@ -3,8 +3,8 @@
     <color name="brown_200">#d7ccc8</color>
     <color name="brown_500">#795548</color>
     <color name="brown_700">#5d4037</color>
-    <color name="teal_200">#ffc107</color>
-    <color name="teal_700">#ffa000</color>
+    <color name="teal_200">#1E1E1E</color>
+    <color name="teal_700">#3A3A3A</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="underline">#D8D6D6</color>

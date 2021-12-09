@@ -32,4 +32,5 @@
     <string name="day90Label">90 days Change:</string>
     <string name="day180Label">180 days Change:</string>
     <string name="coins_image_description">coinsImage</string>
+    <string name="button_delete_desc">Delete user</string>
 </resources>

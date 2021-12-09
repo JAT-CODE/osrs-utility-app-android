@@ -1,20 +1,15 @@
 package com.example.osrsutility
 
 import android.app.SearchManager
-import android.content.Context
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBar
-import com.android.volley.Request
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import org.json.JSONObject
-import org.json.JSONTokener
+import android.content.Context
+import android.content.Intent
+import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.osrsutility.databinding.ActivityGrandExchangeBinding
 import retrofit2.Call
@@ -39,28 +34,6 @@ class GrandExchange : AppCompatActivity() {
         binding = ActivityGrandExchangeBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
-
-     //   val queue1 = Volley.newRequestQueue(this)
-     //   val url1 = "https://prices.runescape.wiki/api/v1/osrs/latest"
-
-    //    val stringRequest1 = StringRequest(
-    //        Request.Method.GET, url1,
-    //        { response ->
-    //            val jsonObject = JSONTokener(response).nextValue() as JSONObject
-    //            val jsonDatapool = jsonObject.getJSONObject("data")
-    //                println(jsonDatapool)
-    //            //val itemID = jsonDatapool.keys();
-    //                //println(itemID);
-    //
-    //            jsonDatapool.keys()
-    //
-    //        },
-    //        { println("That didn't work!") }
-    //    )
-
-        // Add the request to the RequestQueue.
-    //    queue1.add(stringRequest1)
 
         getItems()
 

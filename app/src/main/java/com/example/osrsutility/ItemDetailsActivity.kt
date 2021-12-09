@@ -10,15 +10,11 @@ import android.widget.Toast
 import androidx.appcompat.app.ActionBar
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
-import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
-import kotlin.math.abs
 import kotlin.math.roundToInt
 
 class ItemDetailsActivity : AppCompatActivity() {
-
-    var gson = Gson()
 
     var currItem: DetailsData? = null
 
@@ -90,10 +86,10 @@ class ItemDetailsActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.days180ChangePercentageText).text = item.day180.change
 
         // Change appropriate arrow
-        setCorrectArrow(findViewById<ImageView>(R.id.todayChangeIcon), item.today.trend)
-        setCorrectArrow(findViewById<ImageView>(R.id.days30ChangeIcon), item.day30.trend)
-        setCorrectArrow(findViewById<ImageView>(R.id.days90ChangeIcon), item.day90.trend)
-        setCorrectArrow(findViewById<ImageView>(R.id.days180ChangeIcon), item.day180.trend)
+        setCorrectArrow(findViewById(R.id.todayChangeIcon), item.today.trend)
+        setCorrectArrow(findViewById(R.id.days30ChangeIcon), item.day30.trend)
+        setCorrectArrow(findViewById(R.id.days90ChangeIcon), item.day90.trend)
+        setCorrectArrow(findViewById(R.id.days180ChangeIcon), item.day180.trend)
 
     }
 

@@ -8,8 +8,11 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/search"
+        android:checkable="true"
+        android:enabled="true"
         android:icon="@drawable/ic_baseline_search_24"
         android:title="@string/search_option_title"
+        android:visible="true"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom" />
 
