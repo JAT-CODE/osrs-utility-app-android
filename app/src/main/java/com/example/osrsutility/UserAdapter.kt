@@ -19,7 +19,7 @@ class UserItemDiffCallback : DiffUtil.ItemCallback<User>() {
 
 }
 
-class UserAdapter(val context: Context, val listener: (User) -> Unit, val deleteListener: (User) -> Unit) : ListAdapter<User, UserViewHolder>(UserItemDiffCallback()) {
+class UserAdapter( val listener: (User) -> Unit, val deleteListener: (User) -> Unit) : ListAdapter<User, UserViewHolder>(UserItemDiffCallback()) {
 
     private var _binding: ListItemBinding? = null
     // This property is only valid between onCreateView and
@@ -31,7 +31,7 @@ class UserAdapter(val context: Context, val listener: (User) -> Unit, val delete
 
         return UserViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.list_item, parent, false)
+                .inflate(R.layout.list_user, parent, false)
         )
     }
 
