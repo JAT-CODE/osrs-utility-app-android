@@ -11,6 +11,8 @@
     <string name="add_option_title">Add</string>
     <string name="search_option_title">Search</string>
     <string name="refresh_option_title">Refresh</string>
+    <string name="favorite_option_title">Favorite</string>
+    <string name="unfavorite_option_title">Unfavorite</string>
     <string name="title_activity_item">ItemActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
