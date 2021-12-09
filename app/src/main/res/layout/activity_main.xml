@@ -7,33 +7,33 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/geButton"
+        android:id="@+id/profileBtn"
+        android:drawableLeft="@drawable/steel_full_helm_bigger"
+        android:text="@string/profile_button_text"
         android:layout_width="0dp"
         android:layout_height="72dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="32dp"
-        android:drawableLeft="@drawable/smaller_ge_icon"
-        android:text="@string/grand_exchange"
         app:layout_constrainedWidth="false"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+        app:layout_constraintEnd_toStartOf="@+id/geButton"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/profileBtn"
+        android:id="@+id/geButton"
+        android:drawableLeft="@drawable/smaller_ge_icon"
+        android:text="@string/grand_exchange"
         android:layout_width="0dp"
         android:layout_height="72dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
-        android:drawableLeft="@drawable/steel_full_helm_bigger"
-        android:text="@string/profile_button_text"
         app:layout_constrainedWidth="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/geButton" />
+        app:layout_constraintStart_toEndOf="@+id/profileBtn" />
 
     <ImageView
         android:id="@+id/imageView4"

@@ -10,6 +10,7 @@ import androidx.appcompat.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.widget.SearchView
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.osrsutility.databinding.ActivityGrandExchangeBinding
 import retrofit2.Call
@@ -18,6 +19,7 @@ import retrofit2.Callback
 
 class GrandExchange : AppCompatActivity() {
     private lateinit var binding: ActivityGrandExchangeBinding
+    private lateinit var viewModel: FavoriteItemViewModel
 
     private var items: List<ItemData>? = null
     private var query: String? = null
@@ -27,6 +29,8 @@ class GrandExchange : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grand_exchange)
+
+        viewModel =  ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(FavoriteItemViewModel::class.java)
 
         val actionBar: ActionBar? = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)

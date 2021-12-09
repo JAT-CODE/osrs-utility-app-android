@@ -7,16 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="97dp"
         android:layout_margin="0dp"
-        android:background="#888862">
+        android:background="#4DFFFFFF">
 
-
-        <ImageView
-            android:id="@+id/backgroundId"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#DADADA"
-            android:contentDescription="@string/placeholderDescription"
-            tools:ignore="ImageContrastCheck" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/title_image"

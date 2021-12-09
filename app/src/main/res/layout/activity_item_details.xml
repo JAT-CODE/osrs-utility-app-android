@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/osrsbgfit"
+    android:backgroundTint="#4DFFFFFF"
+    android:backgroundTintMode="src_over"
     tools:context=".ItemDetailsActivity">
 
     <TextView
@@ -17,6 +20,7 @@
         android:textAllCaps="false"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/black"
+        android:textStyle="bold|italic"
         app:layout_constraintEnd_toStartOf="@+id/membersOnlyIcon"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -234,6 +238,7 @@
             android:text="@string/currPriceLabel"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -245,6 +250,7 @@
             android:text="@string/todayLabel"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/currentPriceLabelText"
             app:layout_constraintTop_toBottomOf="@+id/currentPriceLabelText" />
 
@@ -278,6 +284,7 @@
             android:text="@string/day30Label"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/currentPriceLabelText"
             app:layout_constraintTop_toBottomOf="@+id/todayPriceLabelText" />
 
@@ -311,6 +318,7 @@
             android:text="@string/day90Label"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/currentPriceLabelText"
             app:layout_constraintTop_toBottomOf="@+id/day30PriceLabelText" />
 
@@ -322,6 +330,7 @@
             android:text="@string/day180Label"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textColor="@color/black"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/currentPriceLabelText"
             app:layout_constraintTop_toBottomOf="@+id/day90PriceLabelText"
             tools:text="180 days change:" />
