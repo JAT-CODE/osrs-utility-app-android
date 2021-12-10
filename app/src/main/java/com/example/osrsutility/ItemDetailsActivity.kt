@@ -117,7 +117,7 @@ class ItemDetailsActivity : AppCompatActivity() {
         @SuppressLint("SetTextI18n")
     private fun displayData(item: DetailsData?, value: Int, lowalch: Int, highalch: Int, limit: Int) {
         // Display item info
-        findViewById<TextView>(R.id.userNameTextView).text = currItem?.name
+        findViewById<TextView>(R.id.itemNameTextView).text = currItem?.name
         if (currItem?.members == true)
             findViewById<ImageView>(R.id.membersOnlyIcon).visibility = View.VISIBLE
         findViewById<TextView>(R.id.itemExamineText).text = currItem?.description
