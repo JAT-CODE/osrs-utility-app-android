@@ -5,6 +5,7 @@
         android:id="@+id/action_favorite"
         android:icon="@drawable/ic_favorite"
         android:title="@string/favorite_option_title"
+        android:visible="false"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_unfavorite"

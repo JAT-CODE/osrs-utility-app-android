@@ -24,6 +24,11 @@ class GrandExchange : AppCompatActivity() {
     private var items: List<ItemData>? = null
     private var query: String? = null
 
+    private var displayOnlyFavorites = false
+    private lateinit var favoriteItems: List<FavoriteItem>
+
+    lateinit var hidefavorites: MenuItem
+    lateinit var showfavorites: MenuItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -31,6 +36,12 @@ class GrandExchange : AppCompatActivity() {
         setContentView(R.layout.activity_grand_exchange)
 
         viewModel =  ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(FavoriteItemViewModel::class.java)
+
+        viewModel.allFavoriteItems.observe (this,{
+            favoriteItems = it
+            if(displayOnlyFavorites)
+                getItems()
+        })
 
         val actionBar: ActionBar? = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
@@ -60,6 +71,9 @@ class GrandExchange : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.ge_options_menu, menu)
 
+        hidefavorites = menu.findItem(R.id.action_hide_favorites)
+        showfavorites = menu.findItem(R.id.action_show_favorites)
+
         // Associate searchable configuration with the SearchView
         val searchManager = getSystemService(Context.SEARCH_SERVICE) as SearchManager
         (menu.findItem(R.id.search).actionView as SearchView).apply {
@@ -82,6 +96,22 @@ class GrandExchange : AppCompatActivity() {
             true
         }
 
+        R.id.action_show_favorites -> {
+            displayOnlyFavorites = true
+            getItems()
+            showfavorites.isVisible = false
+            hidefavorites.isVisible = true
+            true
+        }
+
+        R.id.action_hide_favorites -> {
+            displayOnlyFavorites = false
+            getItems()
+            showfavorites.isVisible = true
+            hidefavorites.isVisible = false
+            true
+        }
+
         else -> {
             // If we got here, the user's action was not recognized.
             // Invoke the superclass to handle it.
@@ -92,7 +122,15 @@ class GrandExchange : AppCompatActivity() {
 
     private fun showData(items: List<ItemData>){
         binding.recyclerViewItems.layoutManager = LinearLayoutManager(this)
-        binding.recyclerViewItems.adapter = ItemAdapter(items, ::onClickItem )
+
+        if(displayOnlyFavorites) {
+            val filteredFavorites = items.filter { item ->
+                favoriteItems.contains(FavoriteItem(item.id))
+            }
+            binding.recyclerViewItems.adapter = ItemAdapter(filteredFavorites, ::onClickItem )
+        } else {
+            binding.recyclerViewItems.adapter = ItemAdapter(items, ::onClickItem )
+        }
     }
 
 
@@ -107,8 +145,8 @@ class GrandExchange : AppCompatActivity() {
                 items = response.body()
 
                 if(query.isNullOrEmpty())
-                    items?.let {
-                        showData(it)
+                    items?.let { list ->
+                        showData(list)
                     }
                 else
                     filterItems()

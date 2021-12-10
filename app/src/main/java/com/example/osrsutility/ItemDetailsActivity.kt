@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.*
 import androidx.appcompat.app.ActionBar
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
 import retrofit2.Call
@@ -21,19 +22,22 @@ class ItemDetailsActivity : AppCompatActivity() {
     lateinit var favorite: MenuItem
     lateinit var unfavorite: MenuItem
 
+    private lateinit var viewModel: FavoriteItemViewModel
 
-    private var query: String? = null
-
+    var itemID = -1
     var currItem: DetailsData? = null
+    var itemFavorited: Boolean = false
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_details)
 
+
         val actionBar: ActionBar? = supportActionBar
         actionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val itemID = intent.getIntExtra("currItemID", -1)
+        itemID = intent.getIntExtra("currItemID", -1)
         val itemValue = intent.getIntExtra("currItemValue", -1)
         val itemLowalch = intent.getIntExtra("currItemLowalch", -1)
         val itemHighalch = intent.getIntExtra("currItemHighalch", -1)
@@ -44,6 +48,9 @@ class ItemDetailsActivity : AppCompatActivity() {
             finish()
             return
         }
+
+
+        viewModel =  ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(FavoriteItemViewModel::class.java)
 
         ItemsApi.invoke().getItemDetails(itemID).enqueue(object : Callback<ItemDetailsData> {
             override fun onResponse(
@@ -72,16 +79,22 @@ class ItemDetailsActivity : AppCompatActivity() {
         favorite = menu.findItem(R.id.action_favorite)
         unfavorite = menu.findItem(R.id.action_unfavorite)
 
+        viewModel.allFavoriteItems.observe(this, {
+            itemFavorited = it.contains(FavoriteItem(itemID))
+            unfavorite.isVisible = itemFavorited
+            favorite.isVisible = !itemFavorited
+        })
+
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.action_favorite -> {
-            favoriteItems()
+            favoriteItem()
             true
         }
         R.id.action_unfavorite -> {
-            unfavoriteItems()
+            unfavoriteItem()
             true
         }
         else -> {
@@ -91,17 +104,14 @@ class ItemDetailsActivity : AppCompatActivity() {
         }
     }
 
-    private fun favoriteItems() {
+    private fun favoriteItem() {
         println("favorite pressed")
-        favorite.isVisible = false
-        unfavorite.isVisible = true
-
+        viewModel.insertFavoriteItem(FavoriteItem(itemID))
     }
 
-    private fun unfavoriteItems() {
+    private fun unfavoriteItem() {
         println("unfavorite pressed")
-        favorite.isVisible = true
-        unfavorite.isVisible = false
+        viewModel.deleteFavoriteItem(FavoriteItem(itemID))
     }
 
         @SuppressLint("SetTextI18n")

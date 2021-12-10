@@ -37,4 +37,6 @@
     <string name="day180Label">180 days Change:</string>
     <string name="coins_image_description">coinsImage</string>
     <string name="button_delete_desc">Delete user</string>
+    <string name="hide_favorites">Hide favorites</string>
+    <string name="show_favorites">Show favorites</string>
 </resources>
