@@ -8,4 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="underline">#D8D6D6</color>
+    <color name="dark_brown_200">#402E28</color>
+    <color name="dark_brown_500">#2C1F1A</color>
+    <color name="dark_brown_700">#231815</color>
 </resources>
