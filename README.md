@@ -3,8 +3,11 @@ A general utility app for Old School Runescape players where they can check item
 
 This android app has 2 main functionalities: (1) Showcasing character levels and xp amounts, (2) Displaying item prices and price changes from the ingame Grand Exchange.
 
-![image](https://user-images.githubusercontent.com/64148792/155363495-a76a409f-d596-41ad-83ca-9b2a1f83bb76.png)
+![Screenshot_2022-02-23-18-32-38-262_com example osrsutility](https://user-images.githubusercontent.com/64148792/155364203-adc6ab96-44ac-41d7-84f6-861d89c1195a.jpg)
+
 Item price page
-![image](https://user-images.githubusercontent.com/64148792/155363395-03d6871c-2b1b-4c12-8f45-b3dd1e496daf.png)
+![Screenshot_2022-02-23-18-31-53-396_com example osrsutility](https://user-images.githubusercontent.com/64148792/155364245-1ccdb129-64fa-4dd8-a8a3-24e90f565a60.jpg)
+
 Player stat page
-![image](https://user-images.githubusercontent.com/64148792/155363385-deff0fcf-95e2-4555-89f3-55fccb954123.png)
+![Screenshot_2022-02-23-18-31-34-464_com example osrsutility](https://user-images.githubusercontent.com/64148792/155364174-27da4547-a6b7-4920-8dbb-8da19af216a1.jpg)
+
