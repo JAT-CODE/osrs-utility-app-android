@@ -31,18 +31,18 @@ class MainActivity : AppCompatActivity() {
 
         var easterEggvalue = 0
 
+        //kauppasivun avaus
         geButton.setOnClickListener {
-
             val intent = Intent(this, GrandExchange::class.java)
             startActivity(intent)
 
         }
-
+        //profiilisivun avaus
         profileButton.setOnClickListener  {
             val intent = Intent(this, ProfilesActivity::class.java)
             startActivity(intent)
         }
-
+        //kamera funktion lisääminen kurssisuoritusta varten
         mainImageview.setOnClickListener {
             easterEggvalue++;
             if (easterEggvalue == 10) {
@@ -53,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                     startActivityForResult(takePictureIntent, REQUEST_CODE)
                     easterEggvalue = 0;
                 } else {
-                    Toast.makeText(this, "CRITICAL FAILURE", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Cannot access camera", Toast.LENGTH_SHORT).show()
                     easterEggvalue = 0;
                 }
             }

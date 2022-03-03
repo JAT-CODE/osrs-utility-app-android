@@ -9,7 +9,7 @@ import retrofit2.http.Query
 
 const val BASE_USER_URL = "https://secure.runescape.com/m=hiscore_oldschool/"
 
-
+//Käyttäjäprofiilin highscore haku palauttaa käyttäjän tasot
 interface UserApi {
 
     @GET("index_lite.ws")

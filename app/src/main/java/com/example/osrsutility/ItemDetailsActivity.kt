@@ -49,9 +49,9 @@ class ItemDetailsActivity : AppCompatActivity() {
             return
         }
 
-
         viewModel =  ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(FavoriteItemViewModel::class.java)
 
+        //Hakee itemdetails urlilla itemin IDn, jolla seurataan current itemiä
         ItemsApi.invoke().getItemDetails(itemID).enqueue(object : Callback<ItemDetailsData> {
             override fun onResponse(
                 call: Call<ItemDetailsData>,
@@ -68,8 +68,6 @@ class ItemDetailsActivity : AppCompatActivity() {
         })
 
     }
-
-
 
     // ADD OPTIONS MENU
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -117,7 +115,8 @@ class ItemDetailsActivity : AppCompatActivity() {
         @SuppressLint("SetTextI18n")
     private fun displayData(item: DetailsData?, value: Int, lowalch: Int, highalch: Int, limit: Int) {
         // Display item info
-        findViewById<TextView>(R.id.itemNameTextView).text = currItem?.name
+            //Datan esitystä item sivulla, muokattu relevanttiin ja järkevään muotoon tarvittaessa
+        findViewById<TextView>(R.id.userNameTextView).text = currItem?.name
         if (currItem?.members == true)
             findViewById<ImageView>(R.id.membersOnlyIcon).visibility = View.VISIBLE
         findViewById<TextView>(R.id.itemExamineText).text = currItem?.description
@@ -172,6 +171,7 @@ class ItemDetailsActivity : AppCompatActivity() {
             v.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.negative))
     }
 
+    //Muuttaa pelin hintalyhenteet ns "oikeiksi" numeroiksi
     private fun changeToNumberFormat(v: String): Double {
         val value = v.replace(" ", "")
         val l = value.get(value.length-1)

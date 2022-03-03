@@ -4,6 +4,7 @@ import androidx.annotation.WorkerThread
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.asLiveData
 
+//User data
 class UserRepository(private val userDao: UserDao) {
 
     val allUsers: LiveData<List<User>> = userDao.getAll()

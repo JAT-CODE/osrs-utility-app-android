@@ -18,6 +18,7 @@ import retrofit2.Callback
 
 
 class GrandExchange : AppCompatActivity() {
+
     private lateinit var binding: ActivityGrandExchangeBinding
     private lateinit var viewModel: FavoriteItemViewModel
 
@@ -35,6 +36,8 @@ class GrandExchange : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grand_exchange)
 
+        //Kaikkien itemien haku ja esitys
+        //Suosikki itemien haku ja esitys kauppasivulla (jos valittuja)
         viewModel =  ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(FavoriteItemViewModel::class.java)
 
         viewModel.allFavoriteItems.observe (this,{
@@ -81,7 +84,6 @@ class GrandExchange : AppCompatActivity() {
             setOnCloseListener { onSearchCloseListener() }
             setQuery(query, false)
         }
-
         return true
     }
 
@@ -96,6 +98,7 @@ class GrandExchange : AppCompatActivity() {
             true
         }
 
+        //Suosikkien näyttö, nappi vaihdetaan käänteiseksi (Vain suosikit näkyy <-> Kaikki näkyy)
         R.id.action_show_favorites -> {
             displayOnlyFavorites = true
             getItems()
@@ -103,7 +106,6 @@ class GrandExchange : AppCompatActivity() {
             hidefavorites.isVisible = true
             true
         }
-
         R.id.action_hide_favorites -> {
             displayOnlyFavorites = false
             getItems()
@@ -120,6 +122,7 @@ class GrandExchange : AppCompatActivity() {
 
     }
 
+    //Recyclerviewn luonti itemien korttimaista esitystä varten
     private fun showData(items: List<ItemData>){
         binding.recyclerViewItems.layoutManager = LinearLayoutManager(this)
 
@@ -133,9 +136,8 @@ class GrandExchange : AppCompatActivity() {
         }
     }
 
-
-
-
+    //API kutsu itemien saamiseksi, ja sitten niiden esitys käyttäen edellistä funktiota
+    //Retrofit, recyclerview
     private fun getItems() {
         ItemsApi().getItems().enqueue(object : Callback<List<ItemData>> {
             override fun onResponse(
@@ -150,17 +152,15 @@ class GrandExchange : AppCompatActivity() {
                     }
                 else
                     filterItems()
-
                 handleIntent(intent)
             }
-
             override fun onFailure(call: Call<List<ItemData>>, t: Throwable) {
                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
             }
 
         })
     }
-
+    //Itemien filtteröinti haku ehdoilla
     private fun filterItems() {
         val filteredItems = items?.filter { it.name.contains(query.toString(), true) }
 
@@ -174,7 +174,7 @@ class GrandExchange : AppCompatActivity() {
         getItems()
         return false
     }
-
+    //Itemin valinta, lisää item tietoa intentille valitusta itemistä
     private fun onClickItem (item: ItemData) {
         val intent = Intent(this, ItemDetailsActivity::class.java)
         intent.putExtra("currItemID", item.id)
